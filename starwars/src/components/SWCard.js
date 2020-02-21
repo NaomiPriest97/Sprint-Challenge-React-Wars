@@ -5,6 +5,7 @@ const Card = styled.div`
 display:flex;
 justify-content:center;
 align-content:center;
+flex-direction:column;
 background-color: teal;
 width: 100%;
 color:white;
