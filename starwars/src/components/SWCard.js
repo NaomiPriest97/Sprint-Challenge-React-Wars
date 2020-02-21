@@ -1,14 +1,24 @@
 import React from "react";
+import {
+    Card,
+    CardHeader,
+    CardBody,
+    CardText,
+    Col
+  } from "reactstrap";
 
-const SWCard = (props)=> {
+const SWCard = ( character ) => {
     return (
-      <div className="img-list">
-        <h2 className = "name">{props.name} </h2>
-          <p>{props.species}</p>
-          <p>{props.home}</p>
-          <p>{props.films}</p>
-        
-      </div>
+    <Col xs="6" md="4" xl="3">
+        <Card>
+        <CardHeader>{character.name} </CardHeader>
+        <CardBody>
+          <CardText>Gender: {character.gender}</CardText>
+          <CardText>Skin Tone: {character.skin}</CardText>
+          <CardText> Birth Year: {character.year}</CardText>
+        </CardBody>
+      </Card>
+    </Col>
     );
   };
   export default SWCard;
