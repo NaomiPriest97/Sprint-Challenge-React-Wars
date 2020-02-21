@@ -1,24 +1,33 @@
 import React from "react";
-import {
-    Card,
-    CardHeader,
-    CardBody,
-    CardText,
-    Col
-  } from "reactstrap";
+import styled from "styled-components";
+
+const Card = styled.div`
+display:flex;
+justify-content:center;
+align-content:center;
+background-color: teal;
+width: 100%;
+color:white;
+margin: 20px;
+`;
+
+const StyledP = styled.p`
+margin: 20px;
+align-content:center;
+font-size: 20px;
+`;
 
 const SWCard = ( character ) => {
     return (
-    <Col xs="6" md="4" xl="3">
         <Card>
-        <CardHeader>{character.name} </CardHeader>
-        <CardBody>
-          <CardText>Gender: {character.gender}</CardText>
-          <CardText>Skin Tone: {character.skin}</CardText>
-          <CardText> Birth Year: {character.year}</CardText>
-        </CardBody>
+        <h2>{character.name} </h2>
+        
+          <StyledP>Gender: {character.gender}</StyledP>
+          <StyledP>Skin Tone: {character.skin}</StyledP>
+          <StyledP> Birth Year: {character.year}</StyledP>
+        
       </Card>
-    </Col>
+ 
     );
   };
   export default SWCard;

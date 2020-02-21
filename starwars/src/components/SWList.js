@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import SWCard from "../components/SWCard";
-import { Container, Row } from "reactstrap";
+
 
 export default function SWList(){
     const [list, setList] = useState([]);
@@ -16,8 +16,7 @@ export default function SWList(){
             
     }, []);
     return (
-        <Container>
-            <Row>
+        <div>
             {list.map(character => {
                 return (
                     <SWCard 
@@ -29,7 +28,6 @@ export default function SWList(){
                     />   
                 );
             })}
-            </Row>
-        </Container>
+        </div>
     );
 } 
