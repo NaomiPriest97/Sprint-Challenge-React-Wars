@@ -6,9 +6,9 @@ export default function SWList(){
     const [list, setList] = useState([]);
 
     useEffect(() => {
-        axios.get(`"https://swapi.co/api/people/"`)
+        axios.get(`https://swapi.co/api/people/`)
         .then(response => {
-            console.log(response);
+            console.log(response.data);
            setList([response.data]);
         })
         .catch(error => {console.log("the data was not returned", error)});
@@ -16,13 +16,14 @@ export default function SWList(){
     }, []);
     return (
         <div className = "imgs">
-            {list.map(image => {
+            {list.map(character => {
                 return (
                     <SWCard 
-                    name = {image.name}
-                    species = {image.species}
-                    home = {image.homeworld}
-                    films = {image.films}
+                    name = {character.name}
+                    key = {character.id}
+                    // species = {character.species}
+                    // home = {character.homeworld}
+                    // films = {character.films}
                     
                     />
                     
